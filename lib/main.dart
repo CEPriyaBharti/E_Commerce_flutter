@@ -1,4 +1,5 @@
 import 'package:e_commerce/home.dart';
+import 'package:e_commerce/login.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -12,9 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      routes: {
+        "/": (context) => LoginPage(),
+        "/login": (context) => LoginPage(),
+      },  
       darkTheme: ThemeData(brightness: Brightness.dark),
+    
     );
   }
 }
